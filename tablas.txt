@@ -1,0 +1,55 @@
+CREATE TABLE campuses(
+	id SERIAL PRIMARY KEY,
+	nombre_campus TEXT);
+
+CREATE TABLE students(
+	id SERIAL PRIMARY KEY,
+	campus_id INTEGER REFERENCES campuses(id),
+	nombre VARCHAR(30),
+	rol VARCHAR(20),
+	rut VARCHAR(20),
+	carrera TEXT,
+	correo TEXT,
+	tipo VARCHAR(20),
+	telefono INTEGER,
+	contraseña TEXT);
+
+CREATE TABLE areas(
+	id SERIAL PRIMARY KEY,
+	tipo VARCHAR(20),
+	horario time);
+
+CREATE TABLE postulants(
+	id SERIAL PRIMARY KEY,
+	student_id INTEGER REFERENCES students(id));
+	
+CREATE TABLE coordinators(
+	id SERIAL PRIMARY KEY,
+	talla VARCHAR(5),
+	student_id INTEGER REFERENCES students(id));
+
+CREATE TABLE colaborators(
+	id SERIAL PRIMARY KEY,
+	talla VARCHAR(5),
+	postulant_id INTEGER REFERENCES postulants(id));
+
+CREATE TABLE news(
+	id SERIAL PRIMARY KEY,
+	area_id INTEGER REFERENCES areas (id),
+	coordinator_id INTEGER REFERENCES coordinators (id),
+	notica TEXT,
+	fecha DATE);
+
+CREATE TABLE applications(
+	id SERIAL PRIMARY KEY,
+	preferencia TEXT,
+	area_id INTEGER REFERENCES areas (id),
+	postulant_id INTEGER REFERENCES postulants(id));
+	
+CREATE TABLE colaborations(
+	id SERIAL PRIMARY KEY,
+	area_id INTEGER REFERENCES areas (id),
+	colaborator_id INTEGER REFERENCES colaborators(id));
+
+
+
