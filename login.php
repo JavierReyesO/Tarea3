@@ -26,6 +26,19 @@ if ($compara["rol"]==$rol && $compara["contrasena"]==$pass)
         header('Location: admin.php');
     }
 
+    if($compara["tipo"] == "coordinador"){
+        header('Location: coordinador.php');
+    }
+
+    if($compara["tipo"]=="postulante"){
+        header('Location: postulante.php' );
+    }
+    if($compara["tipo"] == "colaborador"){
+        header('Location: colaborador.php' );
+    }
+else{
+    header('Location: index.php');
+}
 
 
 
