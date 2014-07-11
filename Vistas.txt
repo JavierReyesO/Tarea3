@@ -1,0 +1,68 @@
+CREATE VIEW View_seleccionados AS 
+	SELECT nombre,rol
+	FROM students, postulants, colaborators
+	WHERE students.id = postulants.student_id
+	AND postulants.id = colaborator.id
+
+CREATE VIEW View_seleccionados_Tunel AS
+	SELECT nombre, rol
+	FROM students,postulants,colaborators, areas, colaborations
+	WHERE students.id = postulants.student_id
+	AND postulants.id = colaborator.id
+	AND colaborators.id = colaborations.colaborator_id
+	AND colaborations.area_id = areas.id
+	AND areas.tipo = 'Tunel'	
+	
+CREATE VIEW View_seleccionados_Coordinacion_General AS
+	SELECT nombre, rol
+	FROM students,postulants,colaborators, areas, colaborations
+	WHERE students.id = postulants.student_id
+	AND postulants.id = colaborator.id
+	AND colaborators.id = colaborations.colaborator_id
+	AND colaborations.area_id = areas.id
+	AND areas.tipo = 'Coordinacion General'
+
+CREATE VIEW View_seleccionados_Dinamicas AS
+	SELECT nombre, rol
+	FROM students,postulants,colaborators, areas, colaborations
+	WHERE students.id = postulants.student_id
+	AND postulants.id = colaborator.id
+	AND colaborators.id = colaborations.colaborator_id
+	AND colaborations.area_id = areas.id
+	AND areas.tipo = 'Dinamicas'
+
+CREATE VIEW View_seleccionados_Concursos AS
+	SELECT nombre, rol
+	FROM students,postulants,colaborators, areas, colaborations
+	WHERE students.id = postulants.student_id
+	AND postulants.id = colaborator.id
+	AND colaborators.id = colaborations.colaborator_id
+	AND colaborations.area_id = areas.id
+	AND areas.tipo = 'Concursos'
+
+CREATE VIEW View_seleccionados_Alimentacion AS
+	SELECT nombre, rol
+	FROM students,postulants,colaborators, areas, colaborations
+	WHERE students.id = postulants.student_id
+	AND postulants.id = colaborator.id
+	AND colaborators.id = colaborations.colaborator_id
+	AND colaborations.area_id = areas.id
+	AND areas.tipo = 'Alimentacion'
+
+CREATE VIEW View_seleccionados_Registro_Visual AS
+	SELECT nombre, rol
+	FROM students,postulants,colaborators, areas, colaborations
+	WHERE students.id = postulants.student_id
+	AND postulants.id = colaborator.id
+	AND colaborators.id = colaborations.colaborator_id
+	AND colaborations.area_id = areas.id
+	AND areas.tipo = 'Registro Visual'
+
+CREATE VIEW View_seleccionados_Audio AS
+	SELECT nombre, rol
+	FROM students,postulants,colaborators, areas, colaborations
+	WHERE students.id = postulants.student_id
+	AND postulants.id = colaborator.id
+	AND colaborators.id = colaborations.colaborator_id
+	AND colaborations.area_id = areas.id
+	AND areas.tipo = 'Audio'
