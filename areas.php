@@ -37,9 +37,9 @@ for ($i = 0 ; $i < $numrows ; $i++){
     echo "<tr>";
     echo "<td>";
     echo '<form method="post" action="editar.php">';
-    echo '<input type="pass" name="tipo" value=';
+    echo '<input type="text" name="tipo" value=';
     echo  $llamar["tipo"];
-    echo " />";
+    echo " readonly/>";
     echo "<td>";
     echo '<input type="submit" value="Modificar" />';
     echo "</form>";
@@ -51,6 +51,11 @@ for ($i = 0 ; $i < $numrows ; $i++){
 <td>
     <form method="post" action="agregar.php">
         <input type="submit" value="Agregar"/>
+    </form>
+</td>
+<td>
+    <form method="post" action="admin.php">
+        <input type="submit" value="Volver"/>
     </form>
 </td>
 </table>

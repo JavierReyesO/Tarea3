@@ -12,7 +12,7 @@ $pass = $_SESSION['pass']; ?>
 <ul>
     <li>Menu
         <ul>
-            <li><a href="">Mis Datos</a></li>
+            <li><a href="misdatos.php">Mis Datos</a></li>
             <li><a href="areas.php">Áreas</a></li>
             <li><a href="">Coordinadores de Área</a></li>
             <li><a href="">Noticias</a></li>
